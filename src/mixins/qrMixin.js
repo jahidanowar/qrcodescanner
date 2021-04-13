@@ -7,7 +7,7 @@ export default {
   methods: {
     onDecode(result) {
       this.result = result;
-      console.log(result);
+      this.playBeep();
     },
     copyText(str) {
       const el = document.createElement("textarea");
@@ -22,6 +22,10 @@ export default {
         document.body.removeChild(el);
         return Promise.reject(e);
       }
+    },
+    playBeep() {
+      let audio = new Audio("/audio/beep.mp3");
+      audio.play();
     },
   },
 };

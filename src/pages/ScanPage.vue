@@ -77,6 +77,7 @@ export default {
     onDecode(data) {
       this.result = data;
       this.turnCameraOff();
+      this.playBeep();
     },
     turnCameraOff() {
       this.camera = "off";
