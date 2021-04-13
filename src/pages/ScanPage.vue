@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-center text-4xl font-bold">Scan your qrcode</h1>
-  <div class="w-full md:w-96 h-auto overflow-hidden rounded-lg mx-auto my-10">
-    <qr-stream :camera="camera" @decode="onDecode">
+  <div class="w-full md:w-80 h-auto overflow-hidden rounded-lg mx-auto my-10">
+    <qr-stream :camera="camera" @decode="onDecode" @init="onInit" :torch="flashActive">
       <div
         v-if="camera === 'off'"
         class="absolute w-full h-full grid justify-items-center items-center bg-gray-600 bg-opacity-70"
@@ -29,7 +29,13 @@
           </svg>
         </button>
       </div>
+      <div v-if="error" class="text-red-400 text-center">{{ error }}</div>
     </qr-stream>
+  </div>
+  <div v-if="flash" class="text-center">
+      <button class="p-5 bg-white rounded-full" @click="flashActive =! flashActive" :class="{'bg-indigo-500 text-white':flashActive}">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      </button>
   </div>
   <div v-if="result" class="w-full md:w-96 mx-auto">
     <textarea
@@ -71,6 +77,9 @@ export default {
     return {
       camera: "auto",
       copied: false,
+      error: "",
+      flash: false,
+      flashActive: false
     };
   },
   methods: {
@@ -84,7 +93,7 @@ export default {
     },
     turnCameraOn() {
       this.camera = "auto";
-      this.copied = false
+      this.copied = false;
     },
     async copy() {
       await this.copyText(this.result).then((res) => {
@@ -92,6 +101,26 @@ export default {
           this.copied = true;
         }
       });
+    },
+    async onInit(promise) {
+      try {
+        const { capabilities } = await promise;
+        this.flash = capabilities.torch
+      } catch (error) {
+        if (error.name === "NotAllowedError") {
+          this.error = "ERROR: you need to grant camera access permisson";
+        } else if (error.name === "NotFoundError") {
+          this.error = "ERROR: no camera on this device. Try upload option.";
+        } else if (error.name === "NotSupportedError") {
+          this.error = "ERROR: secure context required (HTTPS, localhost)";
+        } else if (error.name === "NotReadableError") {
+          this.error = "ERROR: is the camera already in use?";
+        } else if (error.name === "OverconstrainedError") {
+          this.error = "ERROR: installed cameras are not suitable";
+        } else if (error.name === "StreamApiNotSupportedError") {
+          this.error = "ERROR: Stream API is not supported in this browser";
+        }
+      }
     },
   },
 };
