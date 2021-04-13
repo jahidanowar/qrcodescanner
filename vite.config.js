@@ -59,6 +59,9 @@ export default defineConfig({
           },
         ],
       },
+      workbox: {
+        // workbox options for generateSW
+      }
     }),
   ],
 });
