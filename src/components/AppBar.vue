@@ -19,13 +19,8 @@
             >
           </li>
           <li class="p-5">
-            <router-link to="/plans" class="flex  align-middle">
-              /generator</router-link
-            >
-          </li>
-          <li class="p-5">
-            <router-link to="/login" class="flex align-middle">
-              /how to</router-link
+            <a href="https://qr.foxflue.com" class="flex  align-middle">
+              /generator</a
             >
           </li>
         </ul>
