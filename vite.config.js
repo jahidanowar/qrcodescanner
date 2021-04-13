@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
+      registerType: 'autoUpdate',
       manifest: {
         name: "Qr Code Scanner",
         short_name: "Qr Scanner",
