@@ -83,6 +83,7 @@ export default {
     },
     turnCameraOn() {
       this.camera = "auto";
+      this.copied = false
     },
     async copy() {
       await this.copyText(this.result).then((res) => {
