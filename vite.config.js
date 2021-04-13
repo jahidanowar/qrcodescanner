@@ -7,7 +7,6 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: "autoUpdate",
       manifest: {
         name: "Qr Code Scanner",
         short_name: "Qr Scanner",
@@ -16,6 +15,7 @@ export default defineConfig({
         theme_color: "#6366F1",
         background_color: "#fff",
         description: "The fastest Qr Code scanner",
+        scope: "/",
         icons: [
           {
             src: "/icons/icon-72x72.png",
@@ -59,9 +59,6 @@ export default defineConfig({
           },
         ],
       },
-      workbox: {
-        // workbox options for generateSW
-      }
     }),
   ],
 });
