@@ -4,7 +4,8 @@
       class="container mx-auto py-5 sm:py-0 flex flex-wrap justify-center sm:justify-between"
     >
       <router-link class="block self-center font-bold text-2xl sm:py-2" to="/">
-        <img src="../assets/img/logo.svg" alt="QrCode Scanner" class="h-10" />
+        <!-- <img src="../assets/img/logo.svg" alt="QrCode Scanner" class="h-10" /> -->
+        Qrcode<span class="text-indigo-500">Scanner</span>
       </router-link>
       <nav class="self-center">
         <ul class="inline-flex justify-between align-middle">
