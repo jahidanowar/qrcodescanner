@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply bg-gray-100;
+}
+.container{
+    @apply w-4/5 md:max-w-6xl mx-auto;
+}
+
