@@ -37,7 +37,7 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       </button>
   </div>
-  <div v-if="result" class="w-full md:w-96 mx-auto">
+  <div v-if="result" class="w-full md:w-96 mx-auto mb-20">
     <textarea
       type="text"
       class="w-full result rounded-lg border border-gray-300 p-2 bg-gray-200 max-h-40 focus:outline-none focus:border-indigo-500"
