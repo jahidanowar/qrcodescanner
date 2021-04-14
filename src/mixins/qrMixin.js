@@ -8,6 +8,7 @@ export default {
     onDecode(result) {
       this.result = result;
       this.playBeep();
+      this.addQrData();
     },
     copyText(str) {
       const el = document.createElement("textarea");
@@ -26,6 +27,16 @@ export default {
     playBeep() {
       let audio = new Audio("/audio/beep.mp3");
       audio.play();
+    },
+    addQrData() {
+      if (this.result.length < 1) {
+        return;
+      }
+      this.$store.dispatch("addData", {
+        id: Math.floor(Math.random() * 100),
+        time: Date.now(),
+        content: this.result,
+      });
     },
   },
 };

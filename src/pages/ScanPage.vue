@@ -113,6 +113,7 @@ export default {
       this.result = data;
       this.turnCameraOff();
       this.playBeep();
+      this.addQrData();
     },
     turnCameraOff() {
       this.camera = "off";

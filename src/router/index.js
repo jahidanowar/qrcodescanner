@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import ScanPage from "./../pages/ScanPage.vue";
 import DropPage from "./../pages/DropPage.vue";
+import HistoryPage from "./../pages/HistoryPage.vue";
 
 const routes = [
   {
@@ -11,8 +12,13 @@ const routes = [
   {
     path: "/drop",
     name: "Drop",
-    component: DropPage
-  }
+    component: DropPage,
+  },
+  {
+    path: "/scans",
+    name: "Scans",
+    component: HistoryPage,
+  },
 ];
 
 const router = createRouter({
