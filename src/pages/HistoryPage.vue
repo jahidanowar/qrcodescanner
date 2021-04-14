@@ -5,10 +5,16 @@
     <div
       v-for="(scan, i) in getQrData"
       :key="i"
-      class="inline-flex items-center w-full rounded-xl border bg-white p-3 justify-between mb-5"
+      class="flex items-center w-full rounded-xl border bg-white p-3 justify-between mb-5"
     >
-      <p>{{ scan.content }}</p>
-      <p>{{ new Date(scan.time).toDateString() }}</p>
+      <div>
+        <p>
+          {{
+            scan.content.length > 20 ? scan.content.slice(0, 20) : scan.content
+          }}...
+        </p>
+        <p class="text-xs">{{ new Date(scan.time).toDateString() }}</p>
+      </div>
       <div class="inline-flex">
         <button
           class="bg-indigo-500 text-white p-2 rounded-full mr-2"

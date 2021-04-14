@@ -93,21 +93,12 @@
     </button>
   </div>
   <!-- ./ Results  -->
-  <transition name="slide">
-    <alert v-if="copied" type="success"
-      >Scan content copied to clipboard 🎉</alert
-    >
-  </transition>
 </template>
 
 <script>
 import qrMixin from "./../mixins/qrMixin";
-import Alert from "./../components/Alert.vue";
 export default {
   mixins: [qrMixin],
-  components: {
-    Alert,
-  },
   data() {
     return {
       camera: "auto",

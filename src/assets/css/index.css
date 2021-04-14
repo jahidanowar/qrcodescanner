@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-100 overflow-hidden overflow-x-hidden;
+  @apply bg-gray-100 overflow-x-hidden;
 }
 .container {
   @apply w-4/5 md:max-w-6xl mx-auto;
