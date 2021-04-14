@@ -2,6 +2,7 @@ export default {
   data() {
     return {
       result: null,
+      copied: false,
     };
   },
   methods: {
