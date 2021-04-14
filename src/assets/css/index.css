@@ -9,3 +9,14 @@ body{
     @apply w-4/5 md:max-w-6xl mx-auto;
 }
 
+a.router-link-active{
+    @apply text-indigo-500;
+}
+
+a.logo{
+    @apply text-gray-800;
+}
+
+.nav{
+    @apply px-3 md:px-0 w-full md:max-w-6xl mx-auto;
+}

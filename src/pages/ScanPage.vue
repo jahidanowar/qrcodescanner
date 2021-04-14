@@ -37,6 +37,7 @@
       <div v-if="error" class="text-red-400 text-center">{{ error }}</div>
     </qr-stream>
   </div>
+  <!-- Flash Button  -->
   <div v-if="flash" class="text-center">
     <button
       class="p-5 bg-white rounded-full focus:outline-none"
@@ -59,6 +60,8 @@
       </svg>
     </button>
   </div>
+  <!-- ./ Flash Button  -->
+  <!-- Results  -->
   <div v-if="result" class="w-full md:w-96 mx-auto mb-20">
     <textarea
       type="text"
@@ -89,6 +92,7 @@
       <template v-else>Copied</template>
     </button>
   </div>
+  <!-- ./ Results  -->
 </template>
 
 <script>
