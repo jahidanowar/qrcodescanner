@@ -1,6 +1,6 @@
 <p align="center">
 
-<img src="https://i.ibb.co/zHKSYFV/qr-code-scanner.jpg" style="width: 500px; border-radius:10px; max-width: 100%;">
+<img src="https://i.ibb.co/wSTSy0N/qrcodescanner-banner.png" style="width: 500px; border-radius:10px; max-width: 100%;">
 </p>
 
 # QR Code Sanner
