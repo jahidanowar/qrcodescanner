@@ -17,7 +17,7 @@
       </div>
       <div class="inline-flex">
         <button
-          class="bg-indigo-500 text-white p-2 rounded-full mr-2"
+          class="bg-indigo-500 text-white p-2 rounded-full mr-2 focus:outline-none"
           @click="copy(scan.content)"
         >
           <svg
@@ -36,7 +36,7 @@
           </svg>
         </button>
         <button
-          class="bg-red-400 text-white p-2 rounded-full"
+          class="bg-red-400 text-white p-2 rounded-full focus:outline-none"
           @click="remove(i)"
         >
           <svg
