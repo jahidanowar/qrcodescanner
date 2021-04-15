@@ -87,13 +87,6 @@ export default {
     ...mapGetters(["getQrData"]),
   },
   methods: {
-    addQrData() {
-      this.$store.dispatch("addData", {
-        id: Math.floor(Math.random() * 100),
-        time: Date.now(),
-        content: "https://dadofcad.com",
-      });
-    },
     remove(index) {
       this.$store.dispatch("removeData", index);
     },
