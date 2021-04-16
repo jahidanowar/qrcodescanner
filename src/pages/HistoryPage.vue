@@ -96,7 +96,7 @@ export default {
           this.copied = true;
           setTimeout(() => {
             this.copied = false;
-          }, 3000);
+          }, 1000);
         })
         .catch((e) => {
           lert("Unable to copy");
