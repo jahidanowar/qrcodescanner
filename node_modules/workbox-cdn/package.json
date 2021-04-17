@@ -1,0 +1,36 @@
+{
+  "name": "workbox-cdn",
+  "version": "5.1.4",
+  "description": "Workbox Unofficial CDN",
+  "repository": "nuxt-community/workbox-cdn",
+  "license": "MIT",
+  "author": "Google's Web DevRel Team",
+  "main": "workbox/workbox-sw.js",
+  "files": [
+    "workbox"
+  ],
+  "scripts": {
+    "build": "./scripts/build"
+  },
+  "devDependencies": {
+    "workbox-cli": "^5.1.4"
+  },
+  "contributors": [
+    {
+      "name": "Pooya Parsa",
+      "email": "pooya@pi0.ir"
+    },
+    {
+      "name": "Welson Sukka",
+      "email": "isukkaw@gmail.com"
+    }
+  ],
+  "keywords": [
+    "workbox",
+    "workboxjs",
+    "sw",
+    "service-worker",
+    "pwa",
+    "cdn"
+  ]
+}

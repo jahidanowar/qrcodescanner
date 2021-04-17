@@ -1,0 +1,53 @@
+{
+  "name": "@nuxtjs/pwa",
+  "version": "3.3.5",
+  "description": "Zero config PWA solution for Nuxt.js",
+  "repository": "nuxt-community/pwa-module",
+  "license": "MIT",
+  "main": "dist/pwa.js",
+  "types": "./dist/pwa.d.ts",
+  "files": [
+    "lib",
+    "dist",
+    "templates"
+  ],
+  "scripts": {
+    "build": "siroc build",
+    "dev": "nuxt-ts test/fixture",
+    "lint": "eslint --ext .js,.vue,.ts .",
+    "release": "yarn test && yarn build && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
+  },
+  "dependencies": {
+    "clone-deep": "^4.0.1",
+    "defu": "^3.2.2",
+    "execa": "^5.0.0",
+    "fs-extra": "^9.1.0",
+    "hasha": "^5.2.2",
+    "jimp-compact": "^0.16.1",
+    "lodash.template": "^4.5.0",
+    "serve-static": "^1.14.1",
+    "workbox-cdn": "^5.1.4"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.12.7",
+    "@nuxt/test-utils": "^0.1.2",
+    "@nuxt/types": "^2.14.12",
+    "@nuxt/typescript-build": "^2.0.4",
+    "@nuxt/typescript-runtime": "^2.0.1",
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/eslint-config-typescript": "^5.0.0",
+    "@nuxtjs/module-test-utils": "latest",
+    "@types/workbox-sw": "^4.3.1",
+    "babel-eslint": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "jest": "latest",
+    "klaw-sync": "latest",
+    "node-fetch": "latest",
+    "nuxt-edge": "latest",
+    "siroc": "^0.6.3",
+    "standard-version": "latest",
+    "typescript": "^4.1.3"
+  }
+}
