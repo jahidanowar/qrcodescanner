@@ -60,7 +60,7 @@
   <div v-else class="container text-center">
     <p class="text-xl">Scan data not found 🤥</p>
     <p>
-      Start scanning now 👇 <br>
+      Start scanning now 👇 <br />
       <router-link :to="{ name: 'Home' }" class="text-indigo-500 underline"
         >Scan Qr Code</router-link
       >

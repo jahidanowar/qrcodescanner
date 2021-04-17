@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "vue": "^3.0.5",
+    "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "^4.0.6",
     "vue3-qr-reader": "^0.0.3",
     "vuex": "^4.0.0"
