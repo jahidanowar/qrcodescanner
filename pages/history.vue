@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center text-4xl font-bold mb-10">Scan History</h1>
+    <h1 class="text-center text-4xl font-bold mb-10">Scan History </h1>
 
     <div v-if="getQrData.length >= 1" class="conatiner mb-20">
       <div
