@@ -1,42 +1,49 @@
 <template>
-  <h1 class="text-center text-4xl font-bold">Scan your qrcode</h1>
-  <div class="w-full md:w-80 h-auto overflow-hidden rounded-lg mx-auto my-10">
-    <qr-stream
-      :camera="camera"
-      @decode="onDecode"
-      @init="onInit"
-      :torch="flashActive"
-    >
-      <div
-        v-if="camera === 'off'"
-        class="absolute w-full h-full grid justify-items-center items-center bg-gray-600 bg-opacity-70"
+  <h1 class="text-center text-4xl font-bold">QR Code Scanner</h1>
+  <div class="fancy-border w-full md:w-80 h-auto mx-auto my-10 rounded-xl">
+    <div class="overflow-hidden rounded-lg">
+      <qr-stream
+        :camera="camera"
+        @decode="onDecode"
+        @init="onInit"
+        :torch="flashActive"
       >
-        <button @click="turnCameraOn" class="bg-white rounded-full p-5">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-            ></path>
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-            ></path>
-          </svg>
-        </button>
-      </div>
-      <div v-if="error" class="text-red-400 text-center">{{ error }}</div>
-    </qr-stream>
+        <div
+          v-if="camera === 'off'"
+          class="absolute w-full h-full grid justify-items-center items-center bg-gray-600 bg-opacity-70"
+        >
+          <button @click="turnCameraOn" class="bg-white rounded-full p-5">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          v-show="camera !== 'off'"
+          class="animated-bar absolute w-full h-1"
+        ></div>
+        <div v-if="error" class="text-red-400 text-center">{{ error }}</div>
+      </qr-stream>
+    </div>
   </div>
+
   <!-- Flash Button  -->
   <div v-if="flash" class="text-center">
     <button
@@ -154,4 +161,39 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.animated-bar {
+  animation: animated-bar 3s ease-in-out infinite;
+}
+.fancy-border {
+  padding: 5px;
+}
+@keyframes animated-bar {
+  0% {
+    top: 0;
+    background-color: red;
+    box-shadow: 0px 10px 25px 25px rgba(255, 000, 0, 0.2);
+  }
+  50% {
+    top: 100%;
+    box-shadow: 0px -10px 25px 25px rgba(000, 000, 255, 0.2);
+    background-color: blue;
+  }
+  100% {
+    background-color: red;
+    box-shadow: 0px 10px 25px 25px rgba(255, 000, 0, 0.2);
+    top: 0%;
+  }
+}
+@keyframes animate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+</style>

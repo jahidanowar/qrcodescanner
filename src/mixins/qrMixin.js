@@ -3,7 +3,11 @@ export default {
     return {
       result: null,
       copied: false,
+      audio: null,
     };
+  },
+  created() {
+    this.audio = new Audio("/audio/beep.mp3");
   },
   methods: {
     onDecode(result) {
@@ -12,6 +16,12 @@ export default {
       this.addQrData();
     },
     copyText(str) {
+      const clipboard = window.navigator.clipboard;
+      if (clipboard) {
+        clipboard.writeText(str);
+        return Promise.resolve(true);
+      }
+
       const el = document.createElement("textarea");
       el.value = str;
       document.body.appendChild(el);
@@ -26,8 +36,7 @@ export default {
       }
     },
     playBeep() {
-      let audio = new Audio("/audio/beep.mp3");
-      audio.play();
+      this.audio?.play();
     },
     addQrData() {
       if (this.result.length < 1) {
