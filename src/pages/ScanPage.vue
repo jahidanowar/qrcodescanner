@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-center text-4xl font-bold">QR Code Scanner</h1>
   <div
-    class="fancy-border w-full max-h-96 md:w-80 h-auto mx-auto my-10 rounded-xl"
+    class="fancy-border w-full max-h-80 md:w-96 h-auto mx-auto my-10 rounded-xl"
   >
     <div class="overflow-hidden rounded-lg">
       <qr-stream

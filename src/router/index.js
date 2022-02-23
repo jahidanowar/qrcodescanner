@@ -10,7 +10,7 @@ const routes = [
     component: ScanPage,
   },
   {
-    path: "/drop",
+    path: "/scan-from-image",
     name: "Drop",
     component: DropPage,
   },

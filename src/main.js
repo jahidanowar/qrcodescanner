@@ -4,9 +4,8 @@ import { registerSW } from "virtual:pwa-register";
 
 import App from "./App.vue";
 import router from "./router";
-import store from "./store"
+import store from "./store";
 import "./assets/css/index.css";
-
 //registerSW() registers service worker to the app
 registerSW();
 

@@ -77,7 +77,6 @@
 import { mapGetters } from "vuex";
 import qrMixin from "./../mixins/qrMixin";
 import Alert from "./../components/Alert.vue";
-
 export default {
   mixins: [qrMixin],
   components: {

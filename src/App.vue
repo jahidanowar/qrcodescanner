@@ -1,6 +1,6 @@
 <template>
   <app-bar />
-  <div class="container py-10 h-screen">
+  <div class="container py-10 min-h-screen">
     <router-view />
   </div>
 </template>
